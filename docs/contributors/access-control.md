@@ -179,6 +179,7 @@ Entity and DTO that is returned from listing endpoint which is representing reso
 
 Finally, when you need to extend set of available resources and / or actions that can be used within platform access control, you need to do the following:
 - add new items to `enums` specified in [Resources and actions](#resources-and-actions)
+- classify every new action with an `AccessType`, which the `ResourceAction` constructor requires. `READ` makes the action available to roles that must not be able to change anything, so use `WRITE` for anything that mutates state, has side effects in a system the platform calls, or exercises platform key material, and `SENSITIVE_READ` for a read that discloses stored secret material. When in doubt use `WRITE` — a read-only role can be widened deliberately later, whereas a wrong `READ` grants a write silently
 - annotate corresponding object listing endpoint with annotation [`@AuthEndpoint`](#authendpoint-annotation) to allow setting permissions on objects access level
 - make sure that entity and response objects from listing endpoint contain `name` property
 - implement methods with proper [`@ExternalAuthorization`](#externalauthorization-annotation) annotation properties
