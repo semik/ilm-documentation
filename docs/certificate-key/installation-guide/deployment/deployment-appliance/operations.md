@@ -112,7 +112,7 @@ Before any upgrade, make sure you have a recent snapshot first!
 
 #### OS packages upgrades
 
-ILM Virtual Appliance is based on Debian GNU/Linux. To upgrade it [enter system shell](./TUI/advanced-menu.md#enter-system-shell), and execute command `sudo -i apt update && sudo -i apt upgrade`. This command also upgrades `ilm-appliance-tools` package, this package provides [TUI](./TUI/intro.md), it is necessary to close the open shell connection and login back to start using the new version of the TUI.
+ILM Virtual Appliance is based on Debian GNU/Linux. To upgrade it [enter system shell](./TUI/advanced-menu.md#enter-system-shell), and execute command `sudo apt update && sudo apt upgrade`. This command also upgrades `ilm-appliance-tools` package, this package provides [TUI](./TUI/intro.md), it is necessary to close the open shell connection and login back to start using the new version of the TUI.
 
 The above command first updates information about package versions and the second upgrades them. This way is safe from major upgrades and should be done periodically.
 
